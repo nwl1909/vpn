@@ -41,3 +41,59 @@ clearInterval(fade);
 
 
 };
+
+const volume =
+document.getElementById("volume");
+
+
+const volumeBtn =
+document.getElementById("volumeBtn");
+
+
+
+volume.oninput=()=>{
+
+music.volume = volume.value;
+
+
+if(volume.value==0){
+
+volumeBtn.innerHTML="🔇";
+
+}
+
+else{
+
+volumeBtn.innerHTML="🔊";
+
+}
+
+};
+
+
+
+volumeBtn.onclick=()=>{
+
+
+if(music.volume>0){
+
+music.volume=0;
+
+volume.value=0;
+
+volumeBtn.innerHTML="🔇";
+
+}
+
+else{
+
+music.volume=.8;
+
+volume.value=.8;
+
+volumeBtn.innerHTML="🔊";
+
+}
+
+
+};
